@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ggst-tournament-schedule-bot",
+  "private_key_id": "14f55a42ada0b4e539b46ad0e135a63f4abe41b1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCWl/0agExDhGn1\nj1aWuZRAR5uHAS8z4XYTwxrYTEGA+Yw+R731Mm24xln5xS5DviuqGQIa6DRePJkQ\ntSiwMmI/KPp+xsrUawVqtv520YMpKDNfvZlHuHzfeKY2hWMUAkJCDOqv3PXg1E8d\nNfdBfQYI7eyFaPaFKI/31fsNkKEu0qn/S56t3sVdFVyTGVvmSZ/qEd4on6SQ6UdU\nBTT1lSr7mf7wYSaWwxXwLucTb8u/4lGtQzy7wg+KiCJBd+GIH67C96NSQRL8MNJo\n2/wao8RtxVs1Pr94PykucZsmvmac9U7zDQlR0aNye6cDxjkNVSrBDGpqhBwNXgMK\n+WodNCWxAgMBAAECggEAJCFQAMkyQuqkb11V9XCN0IQ9nLzcgdKAfUpMiQN2ncaB\nbrnQqeDQ8UlpceLscCVSnYtFdYYrdkaMpLUKD4fvCV9ABiWUqTUKBinkUEaA9OFn\nvfsjqNDq6MSuAButgzHtiqJFti7JsQjO+F+ntEcWKRNIMVPW/WiXbeshQgZmnXBg\nOD0j7lub7p/RxO+UNo3DLbsyl38qoFG9HDMn6L+mqXeGfPXAi6jOH+laUdvJgcP3\nifrTkJahExrsCYi3zXSOX4QTc3/TJoN5eW0a66CHPg2E5AQ9ywCSGsYiaXMCjqjZ\n3Y88STJRoRp2EI22AlDcJ1uYIMVhAt/WNcsNoQaMtwKBgQDNYezy9yDy+WYBT6eM\n0mzV5TjTkCGGTCClyuEvKafbGIjXML+9FrD5Xf2WNMorBR+7SmYF+fN23SyvGINU\nQcOxv2ftIdtEUitpuDeHFknA8zE8Xs6r9ei2eRMFHySbv7hxGGCEEt/y8tn9K5TF\nz6omxDv51QRdewAeMfVeXZoB+wKBgQC7tU5BofUqZP3VmwhaInFcZYllVjDUH6PW\nFbWshwX2p7GoXQjpotNkI/GaaMB8dCw1NB9dRaJRCyNPNAv/6s/AadumAyW0gsGv\n0yyDyd6rCYInp0bUmiSsmXFrqgqKb6Qpzuadaqp+b0Rq1/HH505AxT3sjW51CGi8\nZxdAQ0ATQwKBgBd7W8EHuk+tbhk2RzzVjjYCaDXgI8UcDRuHj6l5xMRLENIxs6pl\n3sQUF/tFe9vhURhz0ChcxJZRgVtfnRxUDJDVBofZOB2em3IR6t9aEAKsi3OQj2af\nzgSW4TLTtbbM+8SKefZ/xfUcCQpmIjNfo9+czhKpZT9e4cuSALDSWNpjAoGAA7Bk\ngVW1g8fIVVJer6bNo4s7UAqJmyGkDqkOkP12WIqjKzPo4O6aSPWL4gT9A3UlCUak\n9yhPMFiPsRbMxZLP0nBCKNkW/J01QUddMJnfDm15aV4YPkVpQxsg54TIAECBcXDn\nh2B5SVLWfWMRFWSuXQeDWArPiO1JYaqFAnZP5BECgYEAoseVxc9RW7aaLGpJYOT1\nsz7Fgp5h9vsAPEliiakQjLyxb8gPXYBa10x9+r8y6+Jp3To3JFUU0ucb+8a2g0II\ng4XErsgrpxLX4TmQp3HtzBBUcbu1+d0yz5P7NQbB2DePTCgCdn2CZG53wOMJtfBi\nu+sPfmhjMBw1bL81mlytlI8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "arraf-hoque@ggst-tournament-schedule-bot.iam.gserviceaccount.com",
+  "client_id": "114450063916656262330",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/arraf-hoque%40ggst-tournament-schedule-bot.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
