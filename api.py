@@ -10,10 +10,7 @@ print("Rows: ", wks.row_count)
 print("Columns, ", wks.col_count)
 
 
-cell_list = [wks.col_values(6)]
+search = "NA"
 
-for all in cell_list:
-    if cell_list == "NA":
-        print("NA SPOTTED")
-    elif cell_list == "EMEA":
-        print("EMEA SPOTTED")
+values = [r for r in wks.get_all_values() if r[5] == search]
+print(values, "\n")

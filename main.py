@@ -45,7 +45,17 @@ class MyClient(discord.Client):
         
         if message.content == "?NAschedule": #if someone types "NASchedule"
             print("NA Command Sent!") #confirmation that the command worked (meant for troubleshooting)
-            if weekday == 3: # if it is Thursday (im adding the other days later)
+            search  = "NA"
+            values = [r for r in wks.get_all_values() if r[5]== search]
+            if weekday == 0: #Monday
+                searchday = "Monday"
+                dayvalues = [r for r in wks.get_all_values() if r[4] == searchday]
+                print(dayvalues)
+            elif weekday == 1:
+                print()
+            elif weekday == 2:
+                print()
+            elif weekday == 3: # if it is Thursday (im adding the other days later)
                 scheduleEmbed = discord.Embed (title = "Thursday Tournament Times", colour = None) # create embed
                 scheduleEmbed.add_field(name = wks.acell('B29').value, value = wks.acell('C29').value)
                 scheduleEmbed.add_field(name = wks.acell('B32').value, value = wks.acell("C32").value, inline=False)
@@ -61,6 +71,8 @@ class MyClient(discord.Client):
                 scheduleEmbed.add_field(name = "9Moons strive", value = "[start.gg link](https://start.gg/9moonsGGST)")
                 scheduleEmbed.add_field(name = "CptnHawkeyes Beginner Beatdown", value = "Start Time: <t:1690930800:t> \n [start.gg link](https://start.gg/beginner_beatdown)", inline=False)
                 await message.channel.send(embed=scheduleEmbed) # Send the above embed to discord
+            elif weekday == 6:
+                print()
         else:
             return
 
