@@ -14,8 +14,10 @@ Im at a complete loss and ill need to ask cfresh or someone in the morning.
 import discord
 from datetime import datetime
 import gspread
-from discord.ext import commands 
-
+from discord.ext import commands
+from discord import Colour
+import numpy as np 
+import random as rand
 
 sa = gspread.service_account(filename="creds.json")
 
@@ -36,64 +38,54 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
         now  = datetime.now()
-        weekday = 3
+        weekday = now.strftime('%A')
 
         if message.author == self.user:
             return # if the previous message was itself: stop
         
-        if message.content == "?NAschedule":
+        if message.content == "$schedule":
             print("NA Schedule Request") #confirmation of a Schedule Request
             RegionSearchCon  = "NA" #set the search condition for the region
-            RegionSearchVal = [r for r in wks.get_all_values() if r[5]== RegionSearchCon] #look for all rows with the RegionSearchCon in that column. Store as list.
-            print(RegionSearchVal)
-            '''for r in RegionSearchVal():
-                lolembed = discord.Embed(title = "{weekday} NA TOURNAMENT TIMES", colour = None)
-                lolembed.add_field(name= "Work In Progres", value = r)
-                await message.channel.send(embed=lolembed)'''
-            if weekday == 0:
-                print()
-                
-
-            elif weekday == 1:
-                print()
-            elif weekday == 2:
-                print() 
-
-            elif weekday == 3: # if it is Thursday (im adding the other days later)
-                scheduleEmbed = discord.Embed (title = "Thursday Tournament Times", colour = None) # create embed
-                scheduleEmbed.add_field(name = wks.acell('B29').value, value = wks.acell('C29').value)
-                scheduleEmbed.add_field(name = wks.acell('B32').value, value = wks.acell("C32").value, inline=False)
-                await message.channel.send(embed=scheduleEmbed) # send embed to discords
-            elif weekday == 4: # if it is Friday
-                scheduleEmbed = discord.Embed (title = "Friday Tournament Times", colour = None) # create embed
-                scheduleEmbed.add_field(name = "9Moons strive", value = "holy shit it works")
-                scheduleEmbed.add_field(name = "CptnHawkeyes Beginner Beatdown", value = "Start Time: <t:1690930800:t> \n [start.gg link](https://start.gg/beginner_beatdown)", inline=False)
-                await message.channel.send(embed=scheduleEmbed) # send embed on discord
-
-            elif weekday == 5: # if it is Saturday
-                scheduleEmbed = discord.Embed (title = "Saturday Tournament Times", colour = None) # create embed
-                scheduleEmbed.add_field(name = "9Moons strive", value = "[start.gg link](https://start.gg/9moonsGGST)")
-                scheduleEmbed.add_field(name = "CptnHawkeyes Beginner Beatdown", value = "Start Time: <t:1690930800:t> \n [start.gg link](https://start.gg/beginner_beatdown)", inline=False)
-                await message.channel.send(embed=scheduleEmbed) # Send the above embed to discord
-            elif weekday == 6:
-                print()
-            else:
-                return
-        if message.content == "?EMEAschedule":
+            DaySearchCon = weekday
+            NASearchVal = np.array([r for r in wks.get_all_values() if r[7] == DaySearchCon])
+            print(DaySearchCon )
+            lolembed = discord.Embed(title = weekday + " Tournament Times", colour = None)
+            for row in NASearchVal:
+                lolembed.add_field(name = row[1], value = "Start time: " + row[6] + "\nGame: " + row[4]+ "\n Region: " + row[5] + "\n [Bracket link](" + row[2] + ")", inline = False)
+            lolembed.add_field(name = "Creator", value = "CptnHawkeye")
+            await message.channel.send(embed=lolembed)
+        '''if message.content == "?EMEAschedule":
             print("EMEA Schedule Request") #confirmation of a schedule request
             RegionSearchCon = "EMEA" #set the search condition for the region
             RegionSearchVal = [r for r in wks.get_all_values() if r[7] == RegionSearchCon]
             embed = discord.Embed(title = "EMEA TOURNAMENT TIMES", colour = None)
             embed.add_field(name= "Work In Progres", value = "I'm working on it") #look for all rows with the RegionSearchCon in that column. Store as list.
-            await message.channel.send(embed=embed) 
-
-        if message.content == "?hawkeyeball":
+            await message.channel.send(embed=embed)''' 
+ 
+        if message.content == "$hawkeyeball":
             print("Hawkeyeball")
             nocommandembed = discord.Embed(title = "Hawkeyeball", colour=None)
             nocommandembed.set_thumbnail(url="https://media.discordapp.net/attachments/993612030483365969/1138660307418497054/New_Project.png?width=662&height=662")
             nocommandembed.set_image(url = "https://media.discordapp.net/attachments/993612030483365969/1138660307418497054/New_Project.png?width=662&height=662")
             nocommandembed.add_field(name = "Hawkeyeball", value = "Hawkeyeball")
+            nocommandembed.add_field(name = "Creator", value = "CptnHawkeye")
             await message.channel.send(embed = nocommandembed)
+        if message.content == "$pinghawkeye":
+            x = rand.randint(0,3)
+            if x == 0:
+                await message.channel.send("<@" + str(422548728248008716) + "> <- is cringe")
+            elif x == 1:
+                await message.channel.send("<@" + str(422548728248008716) + "> <- short mf")
+            elif x == 2:
+                await message.channel.send("<@" + str(422548728248008716) + ">")
+            elif x == 3:
+                await message.channel.send("<@" + str(422548728248008716) + "> <- dumbass")
+        if message.content == "$help":
+            teal = Colour.teal()
+            helpEmbed = discord.Embed(title = "Bot Commands", colour = teal)
+            helpEmbed.add_field(name = "Possible Commands", value = "$help \n $pinghawkeye \n $schedule \n $hawkeyeball",)
+            helpEmbed.add_field(name = "Creator", value = "CptnHawkeye")
+            await message.channel.send(embed = helpEmbed)
             
 
 
